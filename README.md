@@ -60,7 +60,7 @@ pip install -r requirements.txt
 - Install the dependencies by running the above command
 
 ## Good to go
-At this stage you should be ready to rumble:
+At this stage you should be ready to rumble, don't forget to start a conversation with the bot with a single message to get the listening loop started:
 ```
 python3 main.py
 ```
