@@ -2,6 +2,7 @@ import os
 import telebot
 from dotenv import load_dotenv
 from groq import Groq
+from get_gmail import get_primary_emails
 
 load_dotenv()
 
@@ -39,6 +40,7 @@ def send_start_help_message(message):
 @bot.message_handler(func=lambda message: True, content_types=["text"])
 def all_other_messages(message):
     response = get_groq_response(message.text)
+    get_primary_emails()
     print(message.text)
     print(message.chat.id)
     bot.send_message(message.chat.id, str(response))
