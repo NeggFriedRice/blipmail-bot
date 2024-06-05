@@ -16,5 +16,5 @@ def get_primary_emails():
 
     # for message in messages:
     #     print("Subject: " + message.subject)
-    time = messages[0].date.split("")
+
     print(messages[0].date)
