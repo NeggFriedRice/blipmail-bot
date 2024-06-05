@@ -1,7 +1,7 @@
 # Blipmail Bot
 
 ## What is it?
-An AI, [Groq](https://groq.com/)-powered (free equivalent-*ish* version of ChatGPT) Telegram bot that checks my Gmail for any new emails in the last 30 minutes and sends out a 30 word summary of each email
+An AI, [Groq](https://groq.com/)-powered (free equivalent-*ish* version of ChatGPT) Telegram bot that checks Gmail for any new emails in the last 30 minutes and sends out a 30 word summary of each email
 
 
 <img alt="Image of an email and showing the summarised version in the Blipmail telegram bot chat" src="./images/email-to-blipmail-small.png" width="700px">
@@ -14,7 +14,7 @@ Okay this one's easy.
 
 **Long answer**: We get spammed on the daily with things we may not even really care about. Even after Google's lovely filtering, I still received 20 emails in the past day. Wouldn't it be great if we had someone or *something* read our emails for us? 
 
-Instead of having to click through 20 emails, I now only need to read 20 short messages from ol' mate Blipmail Bot.
+Instead of having to click through 20 emails, now you only need to read 20 short messages from ol' mate Blipmail Bot.
 
 
 ## But how?
