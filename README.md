@@ -1,1 +1,1 @@
-# schedugram-bot
+# Blipmail bot
