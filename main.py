@@ -48,10 +48,13 @@ def all_other_messages(message):
         email_list = get_primary_emails()
         # Loop through emails in array
         for email in email_list:
-            # Send email content to Groq
-            response = get_groq_response(email)
-            # Bot to send response from Groq
-            bot.send_message(message.chat.id, str(response))
+            try:
+                # Send email content to Groq
+                response = get_groq_response(email)
+                # Bot to send response from Groq
+                bot.send_message(message.chat.id, str(response))
+            except:
+                bot.send_message(message.chat.id, "Oops, I had an issue reading one of your emails")
         
         time.sleep(1800)
 
