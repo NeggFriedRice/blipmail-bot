@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from groq import Groq
 from get_gmail import get_primary_emails
 import time
-from colorama import Fore
+from colorama import Fore, Style
 
 load_dotenv()
 
@@ -23,9 +23,7 @@ def get_groq_response(content):
             {
                 # System prompt to Groq to summarise email content and dictate format of bot response
                 "role": "system",
-                # "content": "The content sent to you is an email with 'sender' and 'body' text, return the sender's name and return a summary of the main points of this email into 30 words or less. Do not send 'Here is a 30-word or less summary of the email' prompt. Send the response with 'From: ' the sender's name only on one line, with a line break after, and then the email body summary"
-                "content": """You are an expert with 20 years at summarizing emails. Only reply to the user with the following format and do not include any responses such as 'here is the 30-word summary' or 'body:', please reply as succinctly as possible in 30 words or less:
-                            'From: ' and include the sender's name, followed by a single blank line, it's very important there is only ONE blank line, followed by the email body summary"""
+                "content": "You will be sent email content. Please create a summary in 30 words or less. Please use the following message format to reply:'From: ' and include the sender's name, followed by a single blank line, followed by the email body summary"
             },
             {
                 "role": "user",
@@ -57,7 +55,7 @@ def all_other_messages(message):
                 # Send email content to Groq
                 response = get_groq_response(email)
                 # Bot to send response from Groq
-                print(Fore.YELLOW + "Responding with summary")
+                print(Fore.YELLOW + "Responding with summary" + Style.Reset_ALL)
                 bot.send_message(message.chat.id, str(response))
             except:
                 bot.send_message(message.chat.id, "Oops, I had an issue reading one of your emails")
