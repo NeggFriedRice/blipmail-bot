@@ -24,7 +24,7 @@ When the script is running:
 - This response is routed through to Telegram (using the telebot library) and is sent as a message to you!
 
 
-<img alt="Image of an email and showing the summarised version in the Blipmail telegram bot chat" src="./images/consolelog.png" width="400px">
+<img alt="Image of an email and showing the summarised version in the Blipmail telegram bot chat" src="./images/consolelog2.png" width="400px">
 
 ## Set up instructions
 Things you're going to need:
