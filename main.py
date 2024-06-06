@@ -12,6 +12,7 @@ TG_API_KEY = os.environ.get('TG_API_KEY')
 
 
 def get_groq_response(content):
+    print("Querying Groq...")
     client = Groq(
         api_key=os.environ.get("GROQ_API_KEY"),
     )
@@ -21,7 +22,9 @@ def get_groq_response(content):
             {
                 # System prompt to Groq to summarise email content and dictate format of bot response
                 "role": "system",
-                "content": "The content sent to you is an email with 'sender' and 'body' text, return the sender's name and return a summary of the main points of this email into 30 words or less. Do not send 'Here is a 30-word or less summary of the email' prompt. Send the response with 'From: ' the sender's name only on one line, with a line break after, and then the email body summary"
+                # "content": "The content sent to you is an email with 'sender' and 'body' text, return the sender's name and return a summary of the main points of this email into 30 words or less. Do not send 'Here is a 30-word or less summary of the email' prompt. Send the response with 'From: ' the sender's name only on one line, with a line break after, and then the email body summary"
+                "content": """You are an expert with 20 years at summarizing emails. Only reply to the user with the following format and do not include any responses such as 'here is the 30-word summary' or 'body:', please reply as succinctly as possible in 30 words or less:
+                            'From: ' and include the sender's name, followed by a single blank line, it's very important there is only ONE blank line, followed by the email body summary"""
             },
             {
                 "role": "user",
@@ -42,6 +45,7 @@ def send_start_help_message(message):
 # Any other message handler
 @bot.message_handler(func=lambda message: True, content_types=["text"])
 def all_other_messages(message):
+    print(f"Message received: {message.text}")
     # Any message to the bot that is not '/start' or '/help' will trigger the 30 minute interval to check for emails
     while True:
         # Get email list array
@@ -57,5 +61,7 @@ def all_other_messages(message):
                 bot.send_message(message.chat.id, "Oops, I had an issue reading one of your emails")
         
         time.sleep(1800)
+
+print("Running in the background...")
 
 bot.infinity_polling()

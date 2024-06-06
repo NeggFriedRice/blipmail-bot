@@ -7,6 +7,7 @@ import pytz
 gmail = Gmail()
 
 def get_primary_emails():
+    print("Fetching emails...")
     # Params to only get emails received in the past day, and only in the 'primary' folder i.e. not spam or promotions folders
     query_params1 = {
         "newer_than": (1, "day"),
@@ -15,6 +16,7 @@ def get_primary_emails():
 
     # Get messages that fit the query params
     messages = gmail.get_messages(query=construct_query(query_params1))
+    
 
     # Email array that will be returned
     email_array = []
@@ -39,5 +41,6 @@ def get_primary_emails():
                 f"Body: {message.plain}"
             )
     
+    print(f"{len(email_array)} new emails detected")
     return email_array
 
