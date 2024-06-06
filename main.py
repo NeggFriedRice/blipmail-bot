@@ -23,7 +23,7 @@ def get_groq_response(content):
             {
                 # System prompt to Groq to summarise email content and dictate format of bot response
                 "role": "system",
-                "content": "You will be sent email content. Please create a summary in 30 words or less. Please use the following message format to reply:'From: ' and include the sender's name, followed by a single blank line, followed by the email body summary"
+                "content": "You will be sent email content. Please create a single paragraph summary in 30 words or less. Never include phrases such as 'Here is the body summary' or similary wording before the summary. Please use the following message format to reply:'From: ' and include the sender's name, followed by a single blank line, followed by the email body summary."
             },
             {
                 "role": "user",
@@ -55,7 +55,7 @@ def all_other_messages(message):
                 # Send email content to Groq
                 response = get_groq_response(email)
                 # Bot to send response from Groq
-                print(Fore.YELLOW + "Responding with summary" + Style.Reset_ALL)
+                print(Fore.YELLOW + "Responding with summary" + Style.RESET_ALL)
                 bot.send_message(message.chat.id, str(response))
             except:
                 bot.send_message(message.chat.id, "Oops, I had an issue reading one of your emails")
