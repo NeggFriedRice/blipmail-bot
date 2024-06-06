@@ -49,9 +49,7 @@ def all_other_messages(message):
     while True:
         # Get email list array
         email_list = get_primary_emails()
-        # Send go back to sleep message if no new emails available
-        if len(email_list) == 0:
-            print(Fore.CYAN + "Going to sleep for the next 30 minutes, goodnight..." + Style.RESET_ALL)
+
         # Loop through emails in array
         for email in email_list:
             try:
