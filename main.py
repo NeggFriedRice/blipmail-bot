@@ -59,7 +59,7 @@ def all_other_messages(message):
                 bot.send_message(message.chat.id, str(response))
             except:
                 bot.send_message(message.chat.id, "Oops, I had an issue reading one of your emails")
-        
+        print(Fore.CYAN + "Going to sleep for the next 30 minutes, goodnight..." + Style.RESET_ALL)
         time.sleep(1800)
 
 print(Fore.CYAN + "Running in the background...")
