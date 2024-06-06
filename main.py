@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from groq import Groq
 from get_gmail import get_primary_emails
 import time
+from colorama import Fore
 
 load_dotenv()
 
@@ -12,7 +13,7 @@ TG_API_KEY = os.environ.get('TG_API_KEY')
 
 
 def get_groq_response(content):
-    print("Querying Groq...")
+    print(Fore.YELLOW + "Querying Groq...")
     client = Groq(
         api_key=os.environ.get("GROQ_API_KEY"),
     )
@@ -45,7 +46,7 @@ def send_start_help_message(message):
 # Any other message handler
 @bot.message_handler(func=lambda message: True, content_types=["text"])
 def all_other_messages(message):
-    print(f"Message received: {message.text}")
+    print(Fore.GREEN + f"Message received: {message.text}")
     # Any message to the bot that is not '/start' or '/help' will trigger the 30 minute interval to check for emails
     while True:
         # Get email list array
@@ -56,12 +57,13 @@ def all_other_messages(message):
                 # Send email content to Groq
                 response = get_groq_response(email)
                 # Bot to send response from Groq
+                print(Fore.YELLOW + "Responding with summary")
                 bot.send_message(message.chat.id, str(response))
             except:
                 bot.send_message(message.chat.id, "Oops, I had an issue reading one of your emails")
         
         time.sleep(1800)
 
-print("Running in the background...")
+print(Fore.CYAN + "Running in the background...")
 
 bot.infinity_polling()

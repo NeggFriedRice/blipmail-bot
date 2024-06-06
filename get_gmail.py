@@ -2,12 +2,13 @@ from simplegmail import Gmail
 from simplegmail.query import construct_query
 from datetime import datetime, timedelta
 import pytz
+from colorama import Fore
 
 # Create Gmail instance from simplegmail
 gmail = Gmail()
 
 def get_primary_emails():
-    print("Fetching emails...")
+    print(Fore.YELLOW + "Fetching emails...")
     # Params to only get emails received in the past day, and only in the 'primary' folder i.e. not spam or promotions folders
     query_params1 = {
         "newer_than": (1, "day"),
@@ -41,6 +42,6 @@ def get_primary_emails():
                 f"Body: {message.plain}"
             )
     
-    print(f"{len(email_array)} new emails detected")
+    print(Fore.GREEN + f"{len(email_array)} new emails detected")
     return email_array
 
