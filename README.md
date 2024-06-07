@@ -1,7 +1,7 @@
 # Blipmail Bot
 
 ## What is it?
-An AI, [Groq](https://groq.com/)-powered (free equivalent-*ish* version of ChatGPT) Telegram bot that checks Gmail for any new emails in the last 30 minutes and sends out a 30 word summary of each email
+An AI, [Groq](https://groq.com/)-powered (free equivalent-*ish* version of ChatGPT, which uses Meta's LLaMA3-8b language model) Telegram bot that checks Gmail for any new emails in the last 30 minutes and sends out a 30 word summary of each email
 
 
 <img alt="Image of an email and showing the summarised version in the Blipmail telegram bot chat" src="./images/email-to-blipmail-small.png" width="700px">
