@@ -28,6 +28,8 @@ When the script is running:
 
 ## Set up instructions
 *Please note this bot is only currently configured to connect with Gmail*
+
+
 Things you're going to need:
 1. An .env file (have a look at the .env_sample file in the repo)
 1. Groq API key (it's free)
