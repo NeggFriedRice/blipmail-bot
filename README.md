@@ -12,9 +12,9 @@ Okay this one's easy.
 
 **Short answer**: Because our inboxes get spammed all day every day.
 
-**Long answer**: We get spammed on the daily with things we may not even really care about. Even after Google's lovely filtering, I still received 20 emails in the past day. Wouldn't it be great if we had someone or *something* read our emails for us? 
+**Long answer**: We get spammed on the daily with things we may not even really care about. Even after Google's lovely filtering of promotion and spam emails, I still managed to receive 20 emails in the past day. Wouldn't it be great if we had someone or *something* read our emails for us? 
 
-Instead of having to click through 20 emails, now you only need to read 20 short messages from ol' mate Blipmail Bot.
+As we are becoming more time poor (*...or is it laziness?*), this bot serves to free up even more time without having to open your Gmail account.
 
 
 ## But how?
@@ -27,6 +27,7 @@ When the script is running:
 <img alt="Image of an email and showing the summarised version in the Blipmail telegram bot chat" src="./images/consolelog2.png" width="400px">
 
 ## Set up instructions
+*Please note this bot is only currently configured to connect with Gmail*
 Things you're going to need:
 1. An .env file (have a look at the .env_sample file in the repo)
 1. Groq API key (it's free)
