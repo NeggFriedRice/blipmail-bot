@@ -39,7 +39,7 @@ def get_primary_emails():
             email_array.append(
                 # Email includes sender name and body text
                 f"Sender: {message.sender}"
-                f"Body: {message.plain}"
+                f"Body: {message.html}"
             )
     
     print(Fore.GREEN + f"{len(email_array)} new emails detected")
