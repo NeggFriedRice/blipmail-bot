@@ -5,7 +5,6 @@ from groq import Groq
 from get_gmail import get_primary_emails
 import time
 from colorama import Fore, Style
-import datetime
 
 load_dotenv()
 
@@ -24,7 +23,7 @@ def get_groq_response(content):
             {
                 # System prompt to Groq to summarise email content and dictate format of bot response
                 "role": "system",
-                "content": "Your job is to simply send a summary of the user's email content, do not insert yourself into the conversation, do not send any 'Notes' from yourself or 'Here is the 30-word summary' or anything like that. You will be sent email content to read. Please create a single paragraph summary in 30 words or less. It is VERY IMPORTANT to use the following format in every response:'From: ' and include the sender's name,\n\nAdd a blank line between the 'From: ' and the summary. And then add the email body summary, thank you so much"
+                "content": "You will be sent email content. Please create a single paragraph summary in 30 words or less. Never include phrases such as 'Here is the body summary' or similary wording before the summary. Please use the following message format to reply:'From: ' and include the sender's name, followed by a single blank line, followed by the email body summary."
             },
             {
                 "role": "user",
