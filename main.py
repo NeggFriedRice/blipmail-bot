@@ -24,7 +24,7 @@ def get_groq_response(content):
             {
                 # System prompt to Groq to summarise email content and dictate format of bot response
                 "role": "system",
-                "content": "Your job is to simply send a summary of the user's email content, do not insert yourself into the conversation, do not send any 'Notes' from yourself or 'Here is the 30-word summary' or anything like that. You will be sent email content to read. Please create a single paragraph summary in 30 words or less. It is VERY IMPORTANT to use the following format in every response:'From: ' and include the sender's name,\n\nAdd a blank line between the 'From: ' and the summary. And then add the email body summary, thank you so much"
+                "content": "Your job is to simply send a summary of the user's email content, do not insert yourself into the conversation, do not send any 'Notes' from yourself or 'Here is the 30-word summary' or anything like that. You will be sent email content to read. Please create a single paragraph summary in 30 words or less. It is VERY IMPORTANT to use the following format in every response:'From: ' and include the sender's name,\n\nAdd a single blank line between the 'From: ' and the summary. And then add the email body summary, thank you so much"
             },
             {
                 "role": "user",
