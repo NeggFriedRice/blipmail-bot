@@ -31,6 +31,7 @@ When the script is running:
 
 
 Things you're going to need:
+1. Clone this repo
 1. An .env file (have a look at the .env_sample file in the repo)
 1. Groq API key (it's free)
 1. Telegram bot API key (it's also free)
